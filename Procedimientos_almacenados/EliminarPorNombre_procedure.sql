@@ -1,0 +1,12 @@
+DELIMITER $
+
+CREATE PROCEDURE eleminar(in n Varchar(155))
+BEGIN 
+DECLARE nombre INT;
+SELECT id_Empnum INTO nombre FROM employee WHERE Surname=n;
+DELETE FROM employee WHERE Id_EmpNUM=nombre;
+END$
+
+-- LLAMAMOS AL PROCEDIMIENTO CON CALL
+
+-- CALL eleminar('AQUI PONEMOS EL NOMBRE A ELIMINAR');
